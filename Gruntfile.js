@@ -1,17 +1,25 @@
 module.exports = function(grunt){
 
+  // configurable paths
+  var config = {
+      dev: 'dev',
+      dist: 'dist'
+  };
+  // '<%= yeoman.app %>/*.html',
+
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
 
     // COMPILE TASKS
-    coffee: { 
+    coffee: {
       glob_to_multiple: {
         expand: true,
-        flatten: true,
-        cwd: 'src/js',
+        // flatten: true,
+        cwd: 'src/',
         src: ['**/*.coffee'],
-        dest: 'build',
+        dest: 'dev',
         ext: '.js',
       },
     },
@@ -23,9 +31,9 @@ module.exports = function(grunt){
         },
         files: [{
           expand: true,
-          cwd: 'src/styles',
-          src: ['*.sass'],
-          dest: 'build',
+          cwd: 'src/elements',
+          src: ['**/*.sass'],
+          dest: 'dev/elements',
           ext: '.css'
         }],
       }
@@ -39,7 +47,7 @@ module.exports = function(grunt){
         },
         files: [ {
           cwd: 'src',
-          dest: 'build',
+          dest: 'dev',
           expand: true,
           src: '**/*.jade',
           ext: '.html',
@@ -47,15 +55,15 @@ module.exports = function(grunt){
       }
     },
     // CONCAT into index.js
-    concat: {
-      options: {
-        separator: ';',
-      },
-      dist: {
-        src: ['src/app.js', 'src/js/tazz.js'],
-        dest: 'build/index.js',
-      },
-    },
+    // concat: {
+    //   options: {
+    //     separator: ';',
+    //   },
+    //   dist: {
+    //     src: ['src/app.js', 'src/js/tazz.js'],
+    //     dest: 'build/index.js',
+    //   },
+    // },
 
     // COPY TASKS
     copy: {
@@ -66,23 +74,24 @@ module.exports = function(grunt){
         dest: 'build/data/'
       },
 
-      font_awesome_scss: {
-        // needs to be copied into src/styles because paths
-        expand: true,
-        cwd: 'bower_components/font-awesome/scss',
-        src: '*.scss',
-        dest: 'src/styles/library/font-awesome'
-      },
-      font_awesome_fonts: {
-        // needs to be copied into src/styles because paths
-        expand: true,
-        cwd: 'bower_components/font-awesome/fonts',
-        src: '*.*',
-        dest: 'build/assets/fonts/font-awesome'
-      },
+      // font_awesome_scss: {
+      //   // needs to be copied into src/styles because paths
+      //   expand: true,
+      //   cwd: 'bower_components/font-awesome/scss',
+      //   src: '*.scss',
+      //   dest: 'src/styles/library/font-awesome'
+      // },
+      // font_awesome_fonts: {
+      //   // needs to be copied into src/styles because paths
+      //   expand: true,
+      //   cwd: 'bower_components/font-awesome/fonts',
+      //   src: '*.*',
+      //   dest: 'build/assets/fonts/font-awesome'
+      // },
 
       bower_components: {
-      // bower components need to be available 
+      // bower components need to be available
+      // TODO: instead set install path to dev with .bowerrc
         expand: true,
         cwd: 'bower_components',
         dest: 'build/bower_components',
@@ -98,14 +107,14 @@ module.exports = function(grunt){
         filter: 'isFile',
       },
 
-      css: {
-        expand: true,
-        cwd: 'src/styles/',
-        src: '**/*.css',
-        dest: 'build/',
-        flatten: true,
-        filter: 'isFile',
-      },
+      // css: {
+      //   expand: true,
+      //   cwd: 'src/styles/',
+      //   src: '**/*.css',
+      //   dest: 'build/',
+      //   flatten: true,
+      //   filter: 'isFile',
+      // },
 
     },
 
@@ -117,14 +126,14 @@ module.exports = function(grunt){
         files: ['src/**/*.html'],
         tasks: ['copy:html'],
       },
-      css: {
-        files: ['src/**/*.css'],
-        tasks: ['copy:css'],
-      },
-      js: {
-        files: [ 'src/**/*.js'],
-        tasks: ['concat:dist'],
-      },
+      // css: {
+      //   files: ['src/**/*.css'],
+      //   tasks: ['copy:css'],
+      // },
+      // js: {
+      //   files: [ 'src/**/*.js'],
+      //   tasks: ['concat:dist'],
+      // },
 
       jade: {
         files: ['src/**/*.jade'],
@@ -139,26 +148,32 @@ module.exports = function(grunt){
         files: 'src/**/*.sass',
         tasks: ['sass'],
       },
-      data: {
-        files: 'data/**/*.*',
-        tasks: 'copy:data'
-      },
+      // data: {
+      //   files: 'data/**/*.*',
+      //   tasks: 'copy:data'
+      // },
       watch_build: {
         files: [
-          'build/*.html',
-          'build/*.js',
-          'build/assets/**',
+          'dev/**/*.html',
+          'dev/**/*.js',
+          // 'dev/assets/**',
         ],
         options: {
-          livereload: true,  
+          livereload: true,
         },
       },
       watch_build_css: {
-        files: ['build/*.css']
+        files: [
+          'dev/**/*.css'
+        ]
       },
       livereload: {
-        files: ['build/*.css'],
-        options: { livereload: true }
+        files: [
+          'build/*.css'
+        ],
+        options: {
+          livereload: true
+        }
       },
     },
 
@@ -173,10 +188,11 @@ module.exports = function(grunt){
       server: {
         options: {
           port: 3000,
-          base: 'build'
+          base: 'dev'
         }
       }
     },
+
 
     // CONCURRENT FOR WATCH AND SERVE
     concurrent: {
@@ -186,7 +202,7 @@ module.exports = function(grunt){
             }
     },
 
-    // Grunt Icon: 
+    // Grunt Icon:
 
     grunticon: {
       myIcons: {
@@ -215,10 +231,19 @@ module.exports = function(grunt){
   grunt.registerTask('log', 'Log some stuff.', function () {
     grunt.log.write('Logging some stuff...').ok();
   });
-  grunt.registerTask('inital_compile', [ 'sass', 'jade', 'coffee', 'concat', 'copy' ]);
+  grunt.registerTask(
+    'inital_compile', [
+       'sass',
+       'jade',
+       'coffee',
+       // 'concat',
+       // 'copy'
+        ]
+  );
+
   grunt.registerTask('server', [ 'connect:server:keepalive' ]);
   grunt.registerTask('default', [ 'inital_compile', 'concurrent:watch_serve_reload' ]);
-  
+
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('tiny-lr');
