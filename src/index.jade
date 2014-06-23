@@ -3,18 +3,24 @@ html(ng-app="tazz")
 head
   meta(charset="utf-8")
   title
-  link(href="index.css" rel="stylesheet" type="text/css")
+  //- link(href="index.css" rel="stylesheet" type="text/css")
 
   //- libraries are installed via bower and simply included piece by piece here. we could also use require.js, but this is far simpler and doesn't need any setup
   //- script(src="bower_components/angular/angular.js")
 
   //- app.js plus any other file from the js/ folder are concated into index.js. again, this spares setting up module loading
-  script(src="index.js")
+  script(src="bower_components/platform/platform.js")
+  //- script(src="index.js")
 
 body
   //- .hello-world
   p.
     hello world ff
 
+
+  script.
+    document.addEventListener('WebComponentsReady', function() {
+      // Perform some behaviour
+    });
 
   script(src="//localhost:35729/livereload.js")

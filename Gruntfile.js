@@ -67,12 +67,12 @@ module.exports = function(grunt){
 
     // COPY TASKS
     copy: {
-      data: {
-        expand: true,
-        cwd: 'data',
-        src: '**/*.json',
-        dest: 'build/data/'
-      },
+      // data: {
+      //   expand: true,
+      //   cwd: 'data',
+      //   src: '**/*.json',
+      //   dest: 'build/data/'
+      // },
 
       // font_awesome_scss: {
       //   // needs to be copied into src/styles because paths
@@ -94,18 +94,18 @@ module.exports = function(grunt){
       // TODO: instead set install path to dev with .bowerrc
         expand: true,
         cwd: 'bower_components',
-        dest: 'build/bower_components',
+        dest: 'dev/bower_components',
         src: '**/*',
       },
 
-      html: {
-        expand: true,
-        cwd: 'src/',
-        src: '**/*.html',
-        dest: 'build/',
-        flatten: true,
-        filter: 'isFile',
-      },
+      // html: {
+      //   expand: true,
+      //   cwd: 'src/',
+      //   src: '**/*.html',
+      //   dest: 'build/',
+      //   flatten: true,
+      //   filter: 'isFile',
+      // },
 
       // css: {
       //   expand: true,
@@ -237,7 +237,7 @@ module.exports = function(grunt){
        'jade',
        'coffee',
        // 'concat',
-       // 'copy'
+       'copy'
         ]
   );
 
