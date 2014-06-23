@@ -1,1 +1,13 @@
-<div class="hello-world"><hello>world</hello></div>
+
+<link rel="import" href="../bower_components/polymer/polymer.html"/>
+<link rel="import" href="../bower_components/core-ajax/core-ajax.html"/>
+<polymer-element name="proto-element" noscript="noscript">
+  <template>
+    <link rel="stylesheet" href="proto-element.css"/>
+    <script src="proto-element.js"></script>
+    <core-ajax url="https://api.github.com/zen" auto="auto" response="{{resp}}"></core-ajax>
+    <div>
+      <blockquote>{{resp}}</blockquote>
+    </div>
+  </template>
+</polymer-element>

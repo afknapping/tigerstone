@@ -41,9 +41,7 @@ module.exports = function(grunt){
     jade: {
       compile: {
         options: {
-          data: {
-            debug: false
-          }
+          pretty: true
         },
         files: [ {
           cwd: 'src',
@@ -169,7 +167,7 @@ module.exports = function(grunt){
       },
       livereload: {
         files: [
-          'build/*.css'
+          'dev/**/*.css'
         ],
         options: {
           livereload: true

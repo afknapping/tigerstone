@@ -1,2 +1,14 @@
-div.hello-world
-  hello world
+link(rel="import" href="../bower_components/polymer/polymer.html")
+link(rel="import" href="../bower_components/core-ajax/core-ajax.html")
+
+polymer-element(name="proto-element" noscript)
+  template
+    //- move the following link of the css to the top of this document to have the css NOT in scope of the custom element>
+    link(rel="stylesheet" href="proto-element.css")
+
+    script(src="proto-element.js")
+    core-ajax(url="https://api.github.com/zen" auto response="{{resp}}")
+
+    div
+      blockquote
+        {{resp}}

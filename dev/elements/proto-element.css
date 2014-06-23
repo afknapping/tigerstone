@@ -1,5 +1,16 @@
-/* line 1, ../../src/elements/proto-element.sass */
-hello-world {
-  background: red;
-  color: white;
+/* line 2, ../../src/elements/proto-element.sass */
+body {
+  background-color: red;
+}
+
+/* line 4, ../../src/elements/proto-element.sass */
+proto-element {
+  background-color: green;
+  display: block;
+}
+
+/* line 10, ../../src/elements/proto-element.sass */
+:host {
+  background-color: yellow;
+  display: block;
 }

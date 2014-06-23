@@ -10,12 +10,14 @@ head
 
   //- app.js plus any other file from the js/ folder are concated into index.js. again, this spares setting up module loading
   script(src="bower_components/platform/platform.js")
-  //- script(src="index.js")
+  link(rel="import" href="elements/proto-element.html")
 
 body
   //- .hello-world
   p.
     hello world ff
+
+  proto-element
 
 
   script.
