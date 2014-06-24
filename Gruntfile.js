@@ -31,9 +31,9 @@ module.exports = function(grunt){
         },
         files: [{
           expand: true,
-          cwd: 'src/elements',
+          cwd: 'src',
           src: ['**/*.sass'],
-          dest: 'dev/elements',
+          dest: 'dev',
           ext: '.css'
         }],
       }
@@ -186,7 +186,8 @@ module.exports = function(grunt){
       server: {
         options: {
           port: 3000,
-          base: 'dev'
+          base: 'dev',
+          open: true
         }
       }
     },
@@ -244,13 +245,10 @@ module.exports = function(grunt){
 
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('tiny-lr');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-coffee');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-grunticon');
 };
