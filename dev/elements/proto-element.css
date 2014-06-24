@@ -6,6 +6,12 @@ body {
 /* line 8, ../../src/elements/proto-element.sass */
 :host {
   display: block;
-  border: 1px solid yellow;
+  padding: 0;
+  border: 1px solid pink;
   background-color: red;
+}
+/* line 18, ../../src/elements/proto-element.sass */
+:host blockquote {
+  padding: 0;
+  text-transform: lowercase;
 }
