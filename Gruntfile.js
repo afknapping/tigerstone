@@ -89,7 +89,7 @@ module.exports = function(grunt){
 
       sass: {
         files: 'src/**/*.sass',
-        tasks: ['sass', 'csscomb:sass'],
+        tasks: ['sass', 'csscomb:sass', 'csslint:dev'],
         options: {
           debounceDelay: 5000
         }
@@ -141,6 +141,15 @@ module.exports = function(grunt){
             dest: 'src',
             ext: '.sass'
         }
+    },
+
+    csslint: {
+      dev: {
+        options: {
+          csslintrc: '.csslintrc'
+        },
+        src: ['dev/**/*.css', '!dev/bower_components/**/*.css']
+      }
     }
 
   });
@@ -169,4 +178,5 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-csscomb');
+  grunt.loadNpmTasks('grunt-contrib-csslint');
 };

@@ -12,6 +12,7 @@ body {
 }
 /* line 18, ../../src/elements/proto-element.sass */
 :host blockquote {
+  width: 300px;
   padding: 0;
   text-transform: lowercase;
 }
