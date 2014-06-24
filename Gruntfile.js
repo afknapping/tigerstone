@@ -196,28 +196,6 @@ module.exports = function(grunt){
             }
     },
 
-    // Grunt Icon:
-
-    grunticon: {
-      myIcons: {
-              files: [{
-                  expand: true,
-                  cwd: 'icons',
-                  src: ['*.svg'],
-                  dest: "src/styles/library/icons"
-              }],
-          options: {
-            datasvgcss: '_icons-data-svg.scss',
-            datapngcss: '_icons-data-png.scss',
-            urlpngcss: 'icons-fallback.css',
-            cssprefix: '%icon-',
-            defaultWidth: '128px',
-            defaultHeight: '128px',
-        }
-      }
-    },
-
-
 
 
   });
