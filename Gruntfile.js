@@ -144,7 +144,10 @@ module.exports = function(grunt){
       },
       sass: {
         files: 'src/**/*.sass',
-        tasks: ['sass'],
+        tasks: ['sass', 'csscomb:sass'],
+        options: {
+          debounceDelay: 5000
+        }
       },
       // data: {
       //   files: 'data/**/*.*',
@@ -196,7 +199,15 @@ module.exports = function(grunt){
             }
     },
 
-
+    csscomb: {
+        sass: {
+            expand: true,
+            cwd: 'src',
+            src: ['**/*.sass'],
+            dest: 'src',
+            ext: '.sass'
+        }
+    }
 
   });
 
@@ -224,4 +235,5 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-coffee');
+  grunt.loadNpmTasks('grunt-csscomb');
 };

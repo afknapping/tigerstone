@@ -10,7 +10,7 @@
     "color-shorthand": false,
     "combinator-space": [" ", " "],
     "element-case": "lower",
-    "eof-newline": true,
+    "eof-newline": false,
     "leading-zero": false,
     "quotes": "single",
     "remove-empty-rulesets": true,
