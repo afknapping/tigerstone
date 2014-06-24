@@ -11,6 +11,6 @@ proto-element {
 
 /* line 10, ../../src/elements/proto-element.sass */
 :host {
-  background-color: yellow;
+  background-color: blue;
   display: block;
 }
