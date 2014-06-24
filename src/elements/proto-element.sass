@@ -1,15 +1,13 @@
 // neither body or the the element selector are applied because css is loaded within scope of custom element
+// to get a negative, move the import within proto-element.html (.jade) out of the template, and on top beneath the other imports. the document body and proto-element should render red and green then.
 body
   background-color: red
-proto-element
-  background-color: green
-  display: block
-
-
 // only :host styles are in use and are scoped within the template they are called from
+
+
 \:host
-  background-color: blue
   display: block
 
 
-// to get a negative, move the import within proto-element.html (.jade) out of the template, and on top beneath the other imports. the document body and proto-element should render red and green then.
+  border: 1px solid yellow
+  background-color: red

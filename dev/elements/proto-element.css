@@ -1,16 +1,11 @@
-/* line 2, ../../src/elements/proto-element.sass */
+/* line 3, ../../src/elements/proto-element.sass */
 body {
   background-color: red;
 }
 
-/* line 4, ../../src/elements/proto-element.sass */
-proto-element {
-  background-color: green;
-  display: block;
-}
-
-/* line 10, ../../src/elements/proto-element.sass */
+/* line 8, ../../src/elements/proto-element.sass */
 :host {
-  background-color: blue;
   display: block;
+  border: 1px solid yellow;
+  background-color: red;
 }
