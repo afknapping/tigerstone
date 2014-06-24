@@ -52,40 +52,10 @@ module.exports = function(grunt){
         } ]
       }
     },
-    // CONCAT into index.js
-    // concat: {
-    //   options: {
-    //     separator: ';',
-    //   },
-    //   dist: {
-    //     src: ['src/app.js', 'src/js/tazz.js'],
-    //     dest: 'build/index.js',
-    //   },
-    // },
 
     // COPY TASKS
+    // font awesomesome example in commit fc820d0
     copy: {
-      // data: {
-      //   expand: true,
-      //   cwd: 'data',
-      //   src: '**/*.json',
-      //   dest: 'build/data/'
-      // },
-
-      // font_awesome_scss: {
-      //   // needs to be copied into src/styles because paths
-      //   expand: true,
-      //   cwd: 'bower_components/font-awesome/scss',
-      //   src: '*.scss',
-      //   dest: 'src/styles/library/font-awesome'
-      // },
-      // font_awesome_fonts: {
-      //   // needs to be copied into src/styles because paths
-      //   expand: true,
-      //   cwd: 'bower_components/font-awesome/fonts',
-      //   src: '*.*',
-      //   dest: 'build/assets/fonts/font-awesome'
-      // },
 
       bower_components: {
       // bower components need to be available
@@ -94,25 +64,7 @@ module.exports = function(grunt){
         cwd: 'bower_components',
         dest: 'dev/bower_components',
         src: '**/*',
-      },
-
-      // html: {
-      //   expand: true,
-      //   cwd: 'src/',
-      //   src: '**/*.html',
-      //   dest: 'build/',
-      //   flatten: true,
-      //   filter: 'isFile',
-      // },
-
-      // css: {
-      //   expand: true,
-      //   cwd: 'src/styles/',
-      //   src: '**/*.css',
-      //   dest: 'build/',
-      //   flatten: true,
-      //   filter: 'isFile',
-      // },
+      }
 
     },
 
@@ -124,14 +76,6 @@ module.exports = function(grunt){
         files: ['src/**/*.html'],
         tasks: ['copy:html'],
       },
-      // css: {
-      //   files: ['src/**/*.css'],
-      //   tasks: ['copy:css'],
-      // },
-      // js: {
-      //   files: [ 'src/**/*.js'],
-      //   tasks: ['concat:dist'],
-      // },
 
       jade: {
         files: ['src/**/*.jade'],
@@ -142,6 +86,7 @@ module.exports = function(grunt){
         files: [ 'src/**/*.coffee' ],
         tasks: [ 'coffee' ],
       },
+
       sass: {
         files: 'src/**/*.sass',
         tasks: ['sass', 'csscomb:sass'],
@@ -149,15 +94,11 @@ module.exports = function(grunt){
           debounceDelay: 5000
         }
       },
-      // data: {
-      //   files: 'data/**/*.*',
-      //   tasks: 'copy:data'
-      // },
+
       watch_build: {
         files: [
           'dev/**/*.html',
           'dev/**/*.js'
-          // 'dev/assets/**',
         ],
         options: {
           livereload: true,
@@ -173,13 +114,6 @@ module.exports = function(grunt){
       }
     },
 
-
-
-  //   jshint: {
-  //     all: [ 'Gruntfile.js', 'src/**/*.js' ]
-  //   },
-
-    // CONNECT SERVER
     connect: {
       server: {
         options: {
@@ -219,7 +153,6 @@ module.exports = function(grunt){
        'sass',
        'jade',
        'coffee',
-       // 'concat',
        'copy'
         ]
   );
