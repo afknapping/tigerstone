@@ -6,17 +6,16 @@
     "url": "git://github.com/filtercake/tazz.git"
   },
   "devDependencies": {
-    "csscomb": "^3.0.0-5",
-    "grunt": "~0.4.2",
-    "grunt-concurrent": "~0.4.3",
-    "grunt-contrib-coffee": "~0.8.2",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-connect": "~0.6.0",
-    "grunt-contrib-copy": "~0.5.0",
-    "grunt-contrib-jade": "~0.12.0",
-    "grunt-contrib-jshint": "~0.8.0",
-    "grunt-contrib-sass": "~0.6.0",
-    "grunt-contrib-watch": "~0.5.3"
+    "csscomb": "*",
+    "grunt": "*",
+    "grunt-concurrent": "*",
+    "grunt-contrib-coffee": "*",
+    "grunt-contrib-connect": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-jade": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-watch": "*"
   },
   "dependencies": {}
 }
