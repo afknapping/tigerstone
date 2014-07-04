@@ -3,6 +3,7 @@ html
 head
   meta(charset="utf-8")
   title
+  link(href="bower_components/normalize-css/normalize.css" rel="stylesheet" type="text/css")
   link(href="index.css" rel="stylesheet" type="text/css")
 
   //- libraries are installed via bower and simply included piece by piece here. we could also use require.js, but this is far simpler and doesn't need any setup
@@ -13,9 +14,6 @@ head
   link(rel="import" href="elements/proto-element.html")
 
 body
-  //- .hello-world
-  p.
-    hello world
 
   proto-element
 

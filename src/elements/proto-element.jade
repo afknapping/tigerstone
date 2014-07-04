@@ -9,6 +9,8 @@ polymer-element(name="proto-element" noscript)
     script(src="proto-element.js")
     core-ajax(url="https://api.github.com/zen" auto response="{{resp}}")
 
-    div
+    div.proto-content
+      p
+        | hello world.
       blockquote
         {{resp}}
