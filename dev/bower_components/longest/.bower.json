@@ -1,0 +1,16 @@
+{
+  "name": "longest",
+  "main": [
+    "index.js"
+  ],
+  "homepage": "https://github.com/jonschlinkert/longest",
+  "_release": "43704247f1",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "43704247f19b29fd67a6636535244237247d92fa"
+  },
+  "_source": "git://github.com/jonschlinkert/longest.git",
+  "_target": "*",
+  "_originalSource": "longest"
+}
