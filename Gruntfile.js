@@ -27,7 +27,8 @@ module.exports = function(grunt){
       dist: {
         options: {
                 style: 'expanded',
-                lineNumbers: true
+                lineNumbers: true,
+                bundleExec: true
         },
         files: [{
           expand: true,
