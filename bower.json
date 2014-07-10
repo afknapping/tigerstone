@@ -19,6 +19,7 @@
     "longest": "*",
     "mrmrs-colors": "*",
     "normalize-css": "^3.0.1",
-    "core-ajax": "Polymer/core-ajax#~0.3.3"
+    "core-ajax": "Polymer/core-ajax#~0.3.3",
+    "meyer-reset": "*"
   }
 }
